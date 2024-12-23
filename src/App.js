@@ -7,6 +7,15 @@ const messages = [
 ];
 
 export default function App() {
+  return (
+    <div>
+      <Step />
+      <Step />
+    </div>
+  );
+}
+
+function Step() {
   const [step, setStep] = useState(1);
   const [isOpen, setIsOpen] = useState(true);
 
@@ -31,6 +40,7 @@ export default function App() {
       <button className="close" onClick={() => setIsOpen(!isOpen)}>
         &times;
       </button>
+
       {isOpen && (
         <div className="steps">
           <div className="numbers">
