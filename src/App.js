@@ -10,6 +10,14 @@ export default function App() {
   return (
     <div>
       <Step />
+      <StepMessage step={1}>
+        <p>Pass in content</p>
+        <p>✌🏻</p>
+      </StepMessage>
+      <StepMessage step={2}>
+        <p>Read children prop</p>
+        <p>😎</p>
+      </StepMessage>
     </div>
   );
 }
@@ -47,10 +55,18 @@ function Step() {
             <div className={step >= 2 ? "active" : ""}>2</div>
             <div className={step >= 3 ? "active" : ""}>3</div>
           </div>
-          <p className="message">
-            Step {step}: {messages[step - 1]}
-            {/* {test.name} */}
-          </p>
+          <StepMessage step={step}>
+            {messages[step - 1]}
+            <div class="buttons">
+              <Button
+                bgColor="#e7e7e7"
+                textColor="#333"
+                onClick={() => alert(`Learn how to ${messages[step - 1]}`)}
+              >
+                Still broke?
+              </Button>
+            </div>
+          </StepMessage>
           <div className="buttons">
             <Button bgColor="#7950f2" textColor="#fff" onClick={handlePrevious}>
               <span>👈🏻</span>Previous
@@ -73,5 +89,14 @@ function Button({ textColor, bgColor, onClick, children }) {
     >
       {children}
     </button>
+  );
+}
+
+function StepMessage({ step, children }) {
+  return (
+    <p className="message">
+      <h3>Step {step}</h3>
+      {children}
+    </p>
   );
 }
