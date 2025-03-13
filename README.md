@@ -66,15 +66,7 @@ Ensure you have the following installed:
 
 ## 🌍 Deployment
 
-To deploy the application, build the project and host it on a platform like **Vercel**, **Netlify**, or **GitHub Pages**:
-
-1. Build the application:
-
-   ```bash
-   npm run build
-   ```
-
-2. Deploy the contents of the `build` folder to your hosting platform of choice.
+The project is now live and can be accessed at [here](https://neendudev.github.io/Steps/).
 
 ---
 
